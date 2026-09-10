@@ -1,0 +1,373 @@
+/* ============================================
+   ПОДКЛЮЧЕНИЕ ЛОКАЛЬНОГО ШРИФТА
+   ============================================ */
+@font-face {
+    font-family: 'CustomFont';
+    src: local('Montserrat'),
+         url('fonts/custom-font.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* ============================================
+   БАЗОВЫЕ СТИЛИ
+   ============================================ */
+body {
+    font-family: 'CustomFont', Arial, sans-serif;
+    font-size: 14pt;
+    line-height: 1.6;
+    color: #333333;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 20px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ============================================
+   ЗАГОЛОВКИ
+   ============================================ */
+h1 {
+    font-size: 24pt;
+    text-align: center;
+    color: #1a1a2e;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    letter-spacing: 1px;
+}
+
+h2 {
+    font-size: 18pt;
+    color: #16213e;
+    border-bottom: 2px solid #e94560;
+    padding-bottom: 10px;
+    margin-top: 40px;
+}
+
+h3 {
+    font-size: 16pt;
+    color: #0f3460;
+    margin-top: 25px;
+}
+
+/* ============================================
+   НАВИГАЦИЯ (СОДЕРЖАНИЕ)
+   ============================================ */
+nav {
+    background-color: #1a1a2e;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+nav h2 {
+    color: #ffffff;
+    border-bottom: none;
+    margin-top: 0;
+}
+
+.nav-list {
+    list-style-type: none;
+    padding-left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.nav-list li {
+    margin: 5px 0;
+}
+
+.nav-list a {
+    color: #e94560;
+    text-decoration: none;
+    font-size: 14pt;
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+.nav-list a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/* ============================================
+   ВЫРАВНИВАНИЕ И ОБТЕКАНИЕ ИЗОБРАЖЕНИЙ
+   ============================================ */
+
+/* Выравнивание по левому краю с обтеканием */
+.img-left {
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 15px;
+    width: 200px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Выравнивание по правому краю с обтеканием */
+.img-right {
+    float: right;
+    margin-left: 20px;
+    margin-bottom: 15px;
+    width: 200px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Выравнивание по центру без обтекания */
+.img-center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 300px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Очистка обтекания */
+.clearfix {
+    clear: both;
+}
+
+/* ============================================
+   ТАБЛИЦА
+   ============================================ */
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.comparison-table th,
+.comparison-table td {
+    border: 1px solid #dddddd;
+    padding: 12px;
+    text-align: left;
+    vertical-align: top;
+}
+
+.comparison-table th {
+    background-color: #1a1a2e;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.comparison-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.comparison-table tr:hover {
+    background-color: #e8e8e8;
+}
+
+/* ============================================
+   СПИСКИ
+   ============================================ */
+
+/* Нумерованный список */
+.history-list {
+    list-style-type: decimal;
+    padding-left: 30px;
+    margin-top: 15px;
+}
+
+.history-list li {
+    margin-bottom: 10px;
+    color: #333333;
+}
+
+/* Маркированный список со стандартным маркером */
+.features-list {
+    list-style-type: square;
+    padding-left: 30px;
+    margin-top: 15px;
+}
+
+.features-list li {
+    margin-bottom: 8px;
+    color: #0f3460;
+}
+
+/* Маркированный список с маркером-картинкой */
+.image-marker-list {
+    list-style-image: url('images/marker-icon.png');
+    padding-left: 40px;
+    margin-top: 15px;
+}
+
+.image-marker-list li {
+    margin-bottom: 10px;
+    padding-left: 10px;
+}
+
+/* Список источников */
+.sources-list {
+    list-style-type: decimal;
+    padding-left: 30px;
+}
+
+.sources-list li {
+    margin-bottom: 10px;
+}
+
+.sources-list a {
+    color: #e94560;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.sources-list a:hover {
+    color: #16213e;
+    text-decoration: underline;
+}
+
+/* ============================================
+   БЛОКИ КОДА С ПОДСВЕТКОЙ СИНТАКСИСА
+   ============================================ */
+.code-block {
+    background-color: #1a1b26;
+    color: #a9b1d6;
+    padding: 20px;
+    border-radius: 8px;
+    font-family: 'Courier New', monospace;
+    font-size: 12pt;
+    line-height: 1.5;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    border-left: 4px solid #7aa2f7;
+}
+
+/* Подсветка: комментарии */
+.code-block .comment {
+    color: #565f89;
+    font-style: italic;
+}
+
+/* Подсветка: ключевые слова */
+.code-block .keyword {
+    color: #bb9af7;
+    font-weight: bold;
+}
+
+/* Подсветка: переменные */
+.code-block .variable {
+    color: #9ece6a;
+}
+
+/* Подсветка: строки */
+.code-block .string {
+    color: #ff9e64;
+}
+
+/* Подсветка: числа */
+.code-block .number {
+    color: #ff9e64;
+}
+
+/* Подсветка: функции */
+.code-block .function {
+    color: #7aa2f7;
+}
+
+/* Подсветка: методы */
+.code-block .method {
+    color: #2ac3de;
+}
+
+/* Подсветка: классы */
+.code-block .class {
+    color: #e0af68;
+}
+
+/* ============================================
+   ССЫЛКИ
+   ============================================ */
+a {
+    color: #e94560;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+a:hover {
+    color: #16213e;
+    text-decoration: underline;
+}
+
+/* ============================================
+   ФУТЕР
+   ============================================ */
+footer {
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 2px solid #1a1a2e;
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+footer h2 {
+    font-size: 16pt;
+    color: #1a1a2e;
+    border-bottom: none;
+}
+
+.tags-list,
+.css-list {
+    font-size: 11pt;
+    color: #555555;
+    line-height: 1.8;
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #dddddd;
+}
+
+/* ============================================
+   СЕКЦИИ
+   ============================================ */
+section {
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* ============================================
+   АДАПТИВНОСТЬ
+   ============================================ */
+@media (max-width: 768px) {
+    .nav-list {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .img-left,
+    .img-right {
+        float: none;
+        display: block;
+        margin: 0 auto 15px auto;
+    }
+    
+    h1 {
+        font-size: 20pt;
+    }
+    
+    h2 {
+        font-size: 16pt;
+    }
+}

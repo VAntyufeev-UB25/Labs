@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Реферат о языке программирования JavaScript">
+    <meta name="author" content="Студент">
+    <title>Язык программирования JavaScript</title>
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Язык программирования JavaScript</h1>
+    </header>
+
+    <nav>
+        <h2>Содержание</h2>
+        <ul class="nav-list">
+            <li><a href="#history">1. История создания</a></li>
+            <li><a href="#overview">2. Краткий обзор языка</a></li>
+            <li><a href="#examples">3. Примеры кода</a></li>
+            <li><a href="#sources">4. Список использованных источников</a></li>
+        </ul>
+    </nav>
+
+    <main>
+
+        <!-- РАЗДЕЛ 1: ИСТОРИЯ СОЗДАНИЯ -->
+        <section id="history">
+            <h2>1. История создания</h2>
+
+            <img src="images/js-logo.png" alt="Логотип JavaScript" class="img-left">
+            
+            <p>Язык JavaScript был разработан Бренданом Эйхом в компании Netscape в 1995 году. 
+            Изначально язык назывался <strong>Mocha</strong>, затем был переименован в <strong>LiveScript</strong>, 
+            и только 4 декабря 1995 года получил своё современное название — JavaScript [citation:1].</p>
+
+            <p>Интересно, что название «JavaScript» было выбрано как маркетинговый ход, 
+            чтобы привлечь внимание к новому языку благодаря популярности Java в те годы. 
+            Однако, несмотря на схожесть названий, эти языки имеют совершенно разную архитектуру и назначение.</p>
+
+            <img src="images/brendan-eich.jpg" alt="Брендан Эйх" class="img-right">
+
+            <p>В 1996 году Microsoft выпустила свой интерпретатор JScript для браузера Internet Explorer, 
+            что привело к необходимости стандартизации языка. В 1997 году JavaScript был стандартизирован 
+            под названием <em>ECMAScript</em> в организации ECMA International [citation:11].</p>
+
+            <h3>Ключевые этапы развития</h3>
+            <ol class="history-list">
+                <li>1995 — создание языка Бренданом Эйхом в Netscape</li>
+                <li>1996 — выпуск JScript от Microsoft</li>
+                <li>1997 — стандартизация ECMAScript 1</li>
+                <li>2009 — выход ECMAScript 5 с новыми возможностями</li>
+                <li>2015 — релиз ECMAScript 6 (ES6) с классами и модулями</li>
+            </ol>
+
+            <div class="clearfix"></div>
+        </section>
+
+        <!-- РАЗДЕЛ 2: КРАТКИЙ ОБЗОР ЯЗЫКА -->
+        <section id="overview">
+            <h2>2. Краткий обзор языка</h2>
+
+            <p>JavaScript — это высокоуровневый, интерпретируемый язык программирования, 
+            который обычно используется как встраиваемый язык для программного доступа 
+            к объектам приложений [citation:2].</p>
+
+            <img src="images/code-example.png" alt="Пример кода" class="img-center">
+
+            <h3>Основные характеристики</h3>
+            <ul class="features-list">
+                <li>Динамическая типизация</li>
+                <li>Слабая типизация</li>
+                <li>Автоматическое управление памятью</li>
+                <li>Прототипное программирование</li>
+                <li>Функции как объекты первого класса</li>
+            </ul>
+
+            <h3>Сравнение с другими языками</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Характеристика</th>
+                        <th>JavaScript</th>
+                        <th>Java</th>
+                        <th>Python</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Типизация</td>
+                        <td>Динамическая</td>
+                        <td>Статическая</td>
+                        <td>Динамическая</td>
+                    </tr>
+                    <tr>
+                        <td>Исполнение</td>
+                        <td>Интерпретация</td>
+                        <td>Компиляция</td>
+                        <td>Интерпретация</td>
+                    </tr>
+                    <tr>
+                        <td>Основное применение</td>
+                        <td>Веб-разработка</td>
+                        <td>Корпоративные системы</td>
+                        <td>Наука, анализ данных</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Список с маркером-картинкой</h3>
+            <ul class="image-marker-list">
+                <li>Клиентская разработка</li>
+                <li>Серверная разработка (Node.js)</li>
+                <li>Мобильные приложения (React Native)</li>
+            </ul>
+        </section>
+
+        <!-- РАЗДЕЛ 3: ПРИМЕРЫ КОДА -->
+        <section id="examples">
+            <h2>3. Примеры кода</h2>
+
+            <p>Ниже представлены примеры кода на JavaScript с цветовой подсветкой синтаксиса.</p>
+
+            <h3>Пример 1: Вывод сообщения</h3>
+            <pre class="code-block">
+<span class="comment">// Простая программа на JavaScript</span>
+<span class="keyword">let</span> <span class="variable">message</span> = <span class="string">"Привет, мир!"</span>;
+<span class="function">console</span>.<span class="method">log</span>(<span class="variable">message</span>);
+            </pre>
+
+            <h3>Пример 2: Цикл for</h3>
+            <pre class="code-block">
+<span class="comment">// Вывод чисел от 0 до 9</span>
+<span class="keyword">for</span> (<span class="keyword">var</span> <span class="variable">i</span> = <span class="number">0</span>; <span class="variable">i</span> &lt; <span class="number">10</span>; <span class="variable">i</span>++) {
+    <span class="function">console</span>.<span class="method">log</span>(<span class="variable">i</span>);
+}
+            </pre>
+
+            <h3>Пример 3: Функция</h3>
+            <pre class="code-block">
+<span class="comment">// Функция для расчёта площади круга</span>
+<span class="keyword">function</span> <span class="function">calculateArea</span>(<span class="variable">radius</span>) {
+    <span class="keyword">const</span> <span class="variable">area</span> = <span class="class">Math</span>.<span class="method">PI</span> * <span class="class">Math</span>.<span class="method">pow</span>(<span class="variable">radius</span>, <span class="number">2</span>);
+    <span class="keyword">return</span> <span class="variable">area</span>;
+}
+
+<span class="keyword">const</span> <span class="variable">result</span> = <span class="function">calculateArea</span>(<span class="number">5</span>);
+<span class="function">console</span>.<span class="method">log</span>(<span class="string">`Площадь: ${result}`</span>);
+            </pre>
+
+            <p>Больше информации о языке можно найти на 
+            <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript" target="_blank">MDN Web Docs</a>.</p>
+        </section>
+
+        <!-- СПИСОК ИСТОЧНИКОВ -->
+        <section id="sources">
+            <h2>4. Список использованных источников</h2>
+            <ol class="sources-list">
+                <li>Официальный сайт JavaScript. URL: <a href="https://www.javascript.com/" target="_blank">https://www.javascript.com/</a></li>
+                <li>MDN Web Docs. JavaScript. URL: <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript" target="_blank">https://developer.mozilla.org/</a></li>
+                <li>ECMA International. ECMAScript Standards.</li>
+            </ol>
+        </section>
+
+    </main>
+
+    <footer>
+        <hr>
+        <h2>Список использованных тегов</h2>
+        <p class="tags-list">
+            &lt;!DOCTYPE&gt;, &lt;html&gt;, &lt;head&gt;, &lt;meta&gt;, &lt;title&gt;, &lt;link&gt;, 
+            &lt;body&gt;, &lt;header&gt;, &lt;nav&gt;, &lt;main&gt;, &lt;section&gt;, &lt;footer&gt;, 
+            &lt;h1&gt;, &lt;h2&gt;, &lt;h3&gt;, &lt;p&gt;, &lt;ul&gt;, &lt;ol&gt;, &lt;li&gt;, 
+            &lt;img&gt;, &lt;table&gt;, &lt;thead&gt;, &lt;tbody&gt;, &lt;tr&gt;, &lt;th&gt;, &lt;td&gt;, 
+            &lt;a&gt;, &lt;strong&gt;, &lt;em&gt;, &lt;pre&gt;, &lt;span&gt;, &lt;div&gt;, &lt;hr&gt;, &lt;br&gt;
+        </p>
+
+        <h2>Список использованных CSS-свойств</h2>
+        <p class="css-list">
+            font-family, font-size, text-align, text-decoration, color, background-color, 
+            margin, margin-top, margin-bottom, margin-left, margin-right, padding, padding-top, 
+            padding-bottom, padding-left, padding-right, border, border-collapse, border-radius, 
+            width, max-width, height, line-height, letter-spacing, float, clear, display, 
+            position, top, left, right, bottom, overflow, box-shadow, list-style-type, 
+            list-style-image, text-shadow, transition, cursor, opacity, z-index, 
+            vertical-align, white-space, word-wrap
+        </p>
+    </footer>
+
+</body>
+</html>
