@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация в соц. сети</title>
+    <link rel="stylesheet" href="../Common/normalize.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="form-container">
+    <h1>Создать аккаунт</h1>
+    <p class="subtitle">Присоединяйтесь к нашему сообществу!</p>
+
+    <!-- Атрибут action пустой, так как это просто макет -->
+    <form action="#" method="POST">
+        
+        <!-- Текстовые поля -->
+        <div class="form-group">
+            <label for="username">Имя пользователя</label>
+            <input type="text" id="username" name="username" placeholder="Введите имя пользователя" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="example@mail.com" required>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Пароль</label>
+            <input type="password" id="password" name="password" placeholder="Придумайте пароль" required>
+        </div>
+
+        <div class="form-group">
+            <label for="phone">Номер телефона</label>
+            <input type="tel" id="phone" name="phone" placeholder="+7 (999) 000-00-00">
+        </div>
+
+        <!-- Поле с датой -->
+        <div class="form-group">
+            <label for="birthdate">Дата рождения</label>
+            <input type="date" id="birthdate" name="birthdate">
+        </div>
+
+        <!-- Выпадающий список (тег select) -->
+        <div class="form-group">
+            <label for="country">Страна</label>
+            <select id="country" name="country">
+                <option value="ru">Россия</option>
+                <option value="kz">Казахстан</option>
+                <option value="by">Беларусь</option>
+            </select>
+        </div>
+
+        <!-- Радиокнопки (выбор пола) -->
+        <div class="form-group radio-group">
+            <span class="group-label">Пол</span>
+            <label class="radio-label">
+                <input type="radio" name="gender" value="male" checked> Мужской
+            </label>
+            <label class="radio-label">
+                <input type="radio" name="gender" value="female"> Женский
+            </label>
+        </div>
+
+        <!-- Чекбокс (согласие) -->
+        <div class="form-group checkbox-group">
+            <label class="checkbox-label">
+                <input type="checkbox" name="agreement" required> 
+                Я согласен с правилами сервиса
+            </label>
+        </div>
+
+        <!-- Кнопки -->
+        <div class="form-actions">
+            <button type="submit" class="btn-submit">Зарегистрироваться</button>
+            <button type="reset" class="btn-reset">Очистить</button>
+        </div>
+
+    </form>
+</div>
+
+</body>
+</html>
