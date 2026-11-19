@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>История языка JavaScript</title>
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1 id="top">История языка JavaScript</h1>
+    <nav class="toc">
+        <h3>Содержание</h3>
+        <ul>
+            <li><a href="#history">1. История создания</a></li>
+            <li><a href="#overview">2. Краткий обзор языка</a></li>
+            <li><a href="#examples">3. Примеры кода</a></li>
+            <li><a href="#tags">4. Список использованных тегов и CSS-свойств</a></li>
+        </ul>
+    </nav>
+    <h2 id="history">1. История создания</h2>
+
+    <img src="Images/brendan.webp" alt="Брендан Айк" class="img-left">
+
+    <p>
+        JavaScript был создан в <strong>1995 году</strong> программистом
+        <em>Бренданом Айком</em> (Brendan Eich), работавшим в компании
+        <a href="https://ru.wikipedia.org/wiki/Netscape" target="_blank" class="external">Netscape</a>.
+        Изначально язык назывался <mark>Mocha</mark>, затем — <mark>LiveScript</mark>,
+        и только потом получил современное имя JavaScript.
+    </p>
+
+    <p>
+        Интересно, что название «JavaScript» появилось в маркетинговых целях —
+        чтобы привлечь внимание к языку
+        <a href="https://ru.wikipedia.org/wiki/Java" target="_blank" class="external">Java</a>,
+        который тогда был очень популярен. Несмотря на схожесть названий,
+        это совершенно разные языки.
+    </p>
+
+    <img src="Images/JavaScript-Versions.png" alt="Хронология JavaScript" class="img-right">
+
+    <p>
+        В 1996 году язык был стандартизирован организацией <strong>ECMA</strong>
+        и получил официальное название <mark>ECMAScript</mark>. С тех пор вышло
+        множество версий: ES3 (1999), ES5 (2009), ES6 (2015) и последующие
+        ежегодные обновления.
+    </p>
+
+    <p>
+        Сегодня JavaScript — один из самых популярных языков программирования в мире.
+        Он используется как на стороне клиента (в браузере), так и на стороне сервера
+        (благодаря среде
+        <a href="https://ru.wikipedia.org/wiki/Node.js" target="_blank" class="external">Node.js</a>).
+    </p>
+
+    <div class="clearfix"></div>
+
+    <h2 id="overview">2. Краткий обзор языка</h2>
+
+    <p>
+        JavaScript — это <strong>мультипарадигменный</strong> язык, поддерживающий
+        функциональное, объектно-ориентированное и императивное программирование.
+        Он <em>динамически типизирован</em>, то есть тип переменной определяется
+        во время выполнения.
+    </p>
+
+    <img src="images/logo.webp" alt="Логотип JavaScript" class="img-center">
+
+    <h3>Основные характеристики</h3>
+
+    <ol>
+        <li>Динамическая типизация</li>
+        <li>Функции — объекты первого класса</li>
+        <li>Прототипное наследование</li>
+        <li>Асинхронность на основе событий</li>
+        <li>Кроссплатформенность</li>
+    </ol>
+
+    <h3>Области применения</h3>
+    <ul class="std">
+        <li>Веб-разработка (frontend)</li>
+        <li>Серверная разработка (Node.js)</li>
+        <li>Мобильные приложения (React Native)</li>
+        <li>Игры и мультимедиа</li>
+    </ul>
+
+    <h3>Популярные фреймворки</h3>
+    <ul class="img-marker">
+        <li>React</li>
+        <li>Vue</li>
+        <li>Angular</li>
+        <li>Svelte</li>
+    </ul>
+
+    <table>
+        <caption>Сравнение версий ECMAScript</caption>
+        <thead>
+            <tr>
+                <th>Версия</th>
+                <th>Год выпуска</th>
+                <th>Ключевые нововведения</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>ES5</td>
+                <td>2009</td>
+                <td>Строгий режим, JSON, Array методы</td>
+            </tr>
+            <tr>
+                <td>ES6</td>
+                <td>2015</td>
+                <td>let/const, стрелочные функции, классы</td>
+            </tr>
+            <tr>
+                <td>ES2020</td>
+                <td>2020</td>
+                <td>Optional chaining, nullish coalescing</td>
+            </tr>
+            <tr>
+                <td>ES2022</td>
+                <td>2022</td>
+                <td>Top-level await, .at()</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2 id="examples">3. Примеры кода</h2>
+
+    <p>Простейший пример программы на JavaScript:</p>
+
+    <pre>
+<span class="comment">// Вывод приветствия в консоль</span>
+<span class="keyword">let</span> <span class="variable">name</span> = <span class="string">"Мир"</span>;
+<span class="function">console</span>.<span class="function">log</span>(<span class="string">`Привет, <span class="variable">${name}</span>!`</span>);
+
+<span class="comment">// Функция сложения двух чисел</span>
+<span class="keyword">function</span> <span class="function">sum</span>(<span class="variable">a</span>, <span class="variable">b</span>) {
+    <span class="keyword">return</span> <span class="variable">a</span> + <span class="variable">b</span>;
+}
+
+<span class="function">console</span>.<span class="function">log</span>(<span class="function">sum</span>(<span class="number">2</span>, <span class="number">3</span>)); <span class="comment">// 5</span>
+    </pre>
+
+    <p>Пример работы с массивом и стрелочной функцией:</p>
+
+    <pre>
+<span class="keyword">const</span> <span class="variable">numbers</span> = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];
+
+<span class="keyword">const</span> <span class="variable">squares</span> = <span class="variable">numbers</span>.<span class="function">map</span>(<span class="variable">n</span> => <span class="variable">n</span> * <span class="variable">n</span>);
+
+<span class="function">console</span>.<span class="function">log</span>(<span class="variable">squares</span>); <span class="comment">// [1, 4, 9, 16, 25]</span>
+    </pre>
+
+    <p>
+        Подробнее о языке можно узнать в
+        <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript" target="_blank" class="external">документации MDN</a>.
+    </p>
+
+    <p><a href="#top">↑ Вернуться к содержанию</a></p>
+
+    <div class="tags-list">
+        <h2 id="tags">4. Список использованных тегов и CSS-свойств</h2>
+
+        <h3>HTML-теги</h3>
+        <p>
+            <code>&lt;!DOCTYPE&gt;</code>, <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code>,
+            <code>&lt;meta&gt;</code>, <code>&lt;title&gt;</code>, <code>&lt;link&gt;</code>,
+            <code>&lt;body&gt;</code>, <code>&lt;h1&gt;</code>,
+            <code>&lt;h2&gt;</code>, <code>&lt;h3&gt;</code>, <code>&lt;p&gt;</code>,
+            <code>&lt;nav&gt;</code>, <code>&lt;ul&gt;</code>, <code>&lt;ol&gt;</code>,
+            <code>&lt;li&gt;</code>, <code>&lt;a&gt;</code>, <code>&lt;img&gt;</code>,
+            <code>&lt;table&gt;</code>, <code>&lt;caption&gt;</code>, <code>&lt;thead&gt;</code>,
+            <code>&lt;tbody&gt;</code>, <code>&lt;tr&gt;</code>, <code>&lt;th&gt;</code>,
+            <code>&lt;td&gt;</code>, <code>&lt;pre&gt;</code>, <code>&lt;span&gt;</code>,
+            <code>&lt;strong&gt;</code>, <code>&lt;em&gt;</code>, <code>&lt;mark&gt;</code>,
+            <code>&lt;div&gt;</code>, <code>&lt;code&gt;</code>
+        </p>
+
+        <h3>CSS-свойства</h3>
+        <p>
+            <code>font-family</code>, <code>font-size</code>, <code>font-weight</code>,
+            <code>font-style</code>, <code>line-height</code>, <code>color</code>,
+            <code>background-color</code>, <code>background-image</code>,
+            <code>background-repeat</code>, <code>background-position</code>,
+            <code>background-size</code>, <code>margin</code>, <code>padding</code>,
+            <code>border</code>, <code>border-radius</code>, <code>border-collapse</code>,
+            <code>border-left</code>, <code>border-bottom</code>, <code>width</code>,
+            <code>text-align</code>, <code>text-decoration</code>, <code>float</code>,
+            <code>clear</code>, <code>display</code>, <code>overflow-x</code>,
+            <code>transition</code>, <code>list-style-type</code>,
+            <code>font-weight</code>
+        </p>
+    </div>
+
+</body>
+</html>

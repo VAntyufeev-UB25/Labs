@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторная работа — Вариант 1</title>
+    <link rel="stylesheet" href="../Common/normalize.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+        .card {
+            background: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-left: 5px solid #3498db;
+        }
+        h2 {
+            margin-top: 0;
+            color: #3498db;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+        p {
+            line-height: 1.6;
+            margin: 8px 0;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-size: 15px;
+            cursor: pointer;
+            transition: background 0.2s;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        .result {
+            font-weight: bold;
+            color: #27ae60;
+            font-size: 16px;
+            background: #eafaf1;
+            padding: 8px 12px;
+            border-radius: 4px;
+            display: none;
+            margin-top: 15px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Лабораторная работа (Вариант 1)</h1>
+
+    <div class="card">
+        <h2>Задание 1. Проверка числа на простоту</h2>
+        <p>Введите число, и программа определит, является ли оно простым.</p>
+        <button onclick="runTask1()">Ввести число</button>
+        <div class="result" id="task1-res"></div>
+    </div>
+
+    <div class="card">
+        <h2>Задание 2 (Часть А). Сумма элементов массива</h2>
+        <p>Найти сумму элементов массива от начала до первого элемента, синус которого положителен.</p>
+        <p><i>(Введите числа через запятую или пробел)</i></p>
+        <button onclick="runTask2A()">Ввести массив</button>
+        <div class="result" id="task2a-res"></div>
+    </div>
+
+    <div class="card">
+        <h2>Задание 2 (Часть Б). Удаление элементов</h2>
+        <p>Удалить элементы, модуль целой части которых — число, все цифры которого чётные.</p>
+        <p><i>(Введите числа через запятую или пробел)</i></p>
+        <button onclick="runTask2B()">Ввести массив</button>
+        <div class="result" id="task2b-res"></div>
+    </div>
+
+    <div class="card">
+        <h2>Задание 4. Подсчёт слогов</h2>
+        <p>Введите слово, программа посчитает количество слогов (гласных букв).</p>
+        <button onclick="runTask4()">Ввести слово</button>
+        <div class="result" id="task4-res"></div>
+    </div>
+
+</div>
+
+<script>
+    function showResult(id, text) {
+        const el = document.getElementById(id);
+        el.innerHTML = text; 
+        el.style.display = 'block';
+    }
+
+    function runTask1() {
+        let input = prompt("Введите целое число:");
+        if (input === null || input.trim() === "") return;
+        
+        let num = parseInt(input);
+        if (isNaN(num)) {
+            alert("Пожалуйста, введите корректное целое число.");
+            return;
+        }
+
+        let isPrime = true;
+        if (num <= 1) {
+            isPrime = false;
+        } else {
+            for (let i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i === 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+        }
+
+        let msg = isPrime ? `${num} — простое число` : `${num} — не простое число (составное)`;
+        showResult('task1-res', msg);
+    }
+
+    function parseArrayInput(input) {
+        return input
+            .split(/[\s,]+/)
+            .filter(s => s !== "")
+            .map(Number)
+            .filter(n => !isNaN(n));
+    }
+
+    function runTask2A() {
+        let input = prompt("Введите числа через запятую или пробел:");
+        if (input === null || input.trim() === "") return;
+
+        let arr = parseArrayInput(input);
+        if (arr.length === 0) {
+            alert("Вы не ввели ни одного числа.");
+            return;
+        }
+
+        let sum = 0;
+        let found = false;
+        for (let i = 0; i < arr.length; i++) {
+            if (Math.sin(arr[i]) > 0) {
+                sum += arr[i];
+                found = true;
+                break;
+            }
+            sum += arr[i];
+        }
+
+        if (found) {
+            showResult('task2a-res', `Массив: [${arr.join(', ')}]<br>Сумма до первого элемента с положительным синусом: ${sum}`);
+        } else {
+            showResult('task2a-res', `В массиве нет элементов с положительным синусом. Сумма всех: ${sum}`);
+        }
+    }
+
+    function runTask2B() {
+        let input = prompt("Введите числа через запятую или пробел:");
+        if (input === null || input.trim() === "") return;
+
+        let arr = parseArrayInput(input);
+        if (arr.length === 0) {
+            alert("Вы не ввели ни одного числа.");
+            return;
+        }
+
+        function allDigitsEven(num) {
+            let str = Math.abs(Math.trunc(num)).toString();
+            for (let i = 0; i < str.length; i++) {
+                if (parseInt(str[i]) % 2 !== 0) return false;
+            }
+            return true;
+        }
+
+        let filtered = arr.filter(item => !allDigitsEven(item));
+        
+        showResult('task2b-res', `Исходный: [${arr.join(', ')}]<br>Осталось: [${filtered.join(', ')}]`);
+    }
+
+    function runTask4() {
+        let input = prompt("Введите слово:");
+        if (input === null || input.trim() === "") return;
+
+        let word = input.trim().toLowerCase();
+        const vowels = "аеёиоуыэюя";
+        let count = 0;
+
+        for (let char of word) {
+            if (vowels.includes(char)) count++;
+        }
+
+        showResult('task4-res', `Слово: "${input.trim()}"<br>Количество слогов (гласных): ${count}`);
+    }
+</script>
+
+</body>
+</html>

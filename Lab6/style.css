@@ -1,0 +1,192 @@
+/* ================= СБРОС ================= */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f3f4f6; /* Светло-серый фон */
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+/* ================= КОНТЕЙНЕР ФОРМЫ ================= */
+.form-container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px; /* Десктопная ширина */
+}
+
+h1 {
+    margin: 0 0 10px;
+    font-size: 24px;
+    color: #1a1a1a;
+    text-align: center;
+}
+
+.subtitle {
+    text-align: center;
+    color: #6b7280;
+    margin-bottom: 25px;
+    font-size: 14px;
+}
+
+/* ================= ГРУППЫ ПОЛЕЙ ================= */
+.form-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Подписи (label) для десктопа */
+.form-group label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 6px;
+}
+
+/* Поля ввода */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="date"],
+select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #1f2937;
+    outline: none;
+    transition: border-color 0.2s;
+    background-color: #ffffff;
+}
+
+input:focus, select:focus {
+    border-color: #2563eb; /* Синий при фокусе */
+}
+
+/* Радиокнопки */
+.radio-group {
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.group-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #374151;
+    width: 100%;
+    margin-bottom: 6px;
+}
+
+.radio-label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: normal !important;
+    cursor: pointer;
+    margin-bottom: 0 !important;
+}
+
+/* Чекбокс */
+.checkbox-group {
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: normal !important;
+    cursor: pointer;
+    font-size: 13px;
+    color: #4b5563;
+}
+
+/* ================= КНОПКИ ================= */
+.form-actions {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+
+.btn-submit,
+.btn-reset {
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-submit {
+    background-color: #2563eb;
+    color: #ffffff;
+}
+
+.btn-submit:hover {
+    background-color: #1d4ed8;
+}
+
+.btn-reset {
+    background-color: #e5e7eb;
+    color: #374151;
+}
+
+.btn-reset:hover {
+    background-color: #d1d5db;
+}
+
+/* ============================================= */
+/* МОБИЛЬНАЯ ВЕРСИЯ (АДАПТИВ)                    */
+/* ============================================= */
+@media (max-width: 768px) {
+    
+    /* Скрываем label, чтобы освободить место */
+    .form-group label:not(.radio-label):not(.checkbox-label) {
+        display: none;
+    }
+    
+    /* Скрываем заголовок группы "Пол" */
+    .group-label {
+        display: none;
+    }
+
+    /* Делаем отступы внутри полей побольше для пальцев */
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="tel"],
+    input[type="date"],
+    select {
+        padding: 14px 12px;
+        font-size: 16px; /* Чтобы iOS не зумил при фокусе */
+    }
+    
+    .form-container {
+        padding: 20px;
+        box-shadow: none; /* Убираем тень на мобилках */
+        background-color: transparent;
+    }
+
+    body {
+        background-color: #ffffff;
+        align-items: flex-start;
+        padding: 0;
+    }
+}
